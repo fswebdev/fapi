@@ -7,10 +7,11 @@ body {
 
 .box {
  width: 300px;
+ border-color: "grey";
+ border-style: solid;
+ padding-top: 1%;
 }
 
 .subtitle {
- border-color: "grey";
- border-style: solid;
- padding-top: 1%
+ background-color: "dew";
 }
