@@ -8,3 +8,9 @@ body {
 .box {
  width: 300px;
 }
+
+.subtitle {
+ border-color: "grey";
+ border-style: solid;
+ padding-top: 1%
+}
