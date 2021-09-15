@@ -1,0 +1,10 @@
+{
+"name": "fapi",
+"version": "0.0.1",
+"private": true,
+"scripts": {
+"build": "react-scripts build"
+},
+"author": "Pradeep",
+"license": "ISC"
+}
