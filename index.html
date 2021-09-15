@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+      <script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
       <script type="text/javascript" src="https://unpkg.com/react@16.7.0-alpha.0/umd/react.production.min.js"></script>
       <script type="text/javascript" src="https://unpkg.com/react-dom@16.7.0-alpha.0/umd/react-dom.production.min.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -12,5 +13,58 @@
 </head>
 <body>
 <div id="root"></div>
+<script>
+const Users = ({ user }) => {
+  return (
+    <div className="box">
+      <p className="subtitle">{user.name}</p>
+      <p>{user.email}</p>
+    </div>
+  );
+};
+
+class App extends React.Component {
+  state = {
+    users: [],
+    isLoading: true,
+    errors: null
+  };
+
+  fetchUsers() {
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          users: data,
+          isLoading: false
+})
+      )
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  render() {
+    const { isLoading, users } = this.state;
+    return (
+      <section className="section">
+        <div className="container">
+          {!isLoading ? (
+            users.map(user => {
+              return <Users key={user.username} user={user} />;
+            })
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+      </section>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));    
+</script>
 </body>
 </html>
