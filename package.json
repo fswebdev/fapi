@@ -2,6 +2,9 @@
 "name": "fapi",
 "version": "0.0.1",
 "private": true,
+"dependencies": {
+"react-scripts": "3.4.0"
+},
 "scripts": {
 "build": "react-scripts build"
 },
