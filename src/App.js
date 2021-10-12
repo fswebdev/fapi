@@ -1,5 +1,6 @@
 import React from "react";
 // import url('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css');
+import "./bulma.min.css";
 // import axios from "axios";
 import "./App.css";
 
