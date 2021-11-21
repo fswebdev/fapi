@@ -8,7 +8,7 @@ import "./bulma.min.css";
 const Users = ({ user }) => {
   return (
     <div className="box">
-      <p className="subtitle"><img src={user.Image} width="100" height="50" /></p>
+      <p className="subtitle"><img src={user.Image} width="100" height="50" alt="Candidate picture"/></p>
       <p>{user.name}</p>
       <p>{user.Id}</p>
     </div>
