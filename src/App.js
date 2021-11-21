@@ -44,7 +44,7 @@ class App extends React.Component {
         <div className="container">
           {!isLoading ? (
             users.map(user => {
-              return <Users key={user.Image}{user.name}{user.Id}{ user={user} />;
+              return <Users key={user.Image}{user.Name}{user.Id}{ user={user} />;
             })
           ) : (
             <p>Loading...</p>
