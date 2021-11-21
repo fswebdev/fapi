@@ -21,7 +21,8 @@ class App extends React.Component {
   };
 
   fetchUsers() {
-    fetch(`https://jsonplaceholder.typicode.com/users`)
+    //fetch(`https://jsonplaceholder.typicode.com/users`)
+    fetch('https://s3-ap-southeast-1.amazonaws.com/he-public-data/users49b8675.json')
       .then(response => response.json())
       .then(data =>
         this.setState({
@@ -35,7 +36,7 @@ class App extends React.Component {
   componentDidMount() {
     this.fetchUsers();
   }
-
+//return <Users key={user.username} user={user} />;
   render() {
     const { isLoading, users } = this.state;
     return (
@@ -43,7 +44,7 @@ class App extends React.Component {
         <div className="container">
           {!isLoading ? (
             users.map(user => {
-              return <Users key={user.username} user={user} />;
+              return <Users key={user.Image}{user.name}{user.Id}{ user={user} />;
             })
           ) : (
             <p>Loading...</p>
