@@ -3,12 +3,14 @@ import React from "react";
 import "./bulma.min.css";
 // import axios from "axios";
 // import "./App.css";
-
+     /* <p className="subtitle">{user.name}</p>
+      <p>{user.email}</p>*/
 const Users = ({ user }) => {
   return (
     <div className="box">
-      <p className="subtitle">{user.name}</p>
-      <p>{user.email}</p>
+      <p className="subtitle">{user.Image}</p>
+      <p>{user.name}</p>
+      <p>{user.Id}</p>
     </div>
   );
 };
@@ -44,7 +46,7 @@ class App extends React.Component {
         <div className="container">
           {!isLoading ? (
             users.map(user => {
-              return <Users key={user.Image}{user.Name}{user.Id}{ user={user} />;
+              return <Users key={user.name}{ user={user} />;
             })
           ) : (
             <p>Loading...</p>
